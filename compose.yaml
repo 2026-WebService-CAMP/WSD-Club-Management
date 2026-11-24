@@ -1,0 +1,14 @@
+services:
+  mariadb:
+    image: mariadb:11.4
+    environment:
+      MARIADB_DATABASE: week12
+      MARIADB_USER: week12
+      MARIADB_PASSWORD: week12_local_only
+      MARIADB_ROOT_PASSWORD: local_root_only
+    ports:
+      - "3307:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+volumes:
+  mariadb_data:
